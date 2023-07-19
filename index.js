@@ -1,9 +1,12 @@
+var express = require('express');
 
-var http = require('http');
+var app = express();
 
-var server = http.createServer(function(req, res){
-    console.log(req.url);
-    res.end('Hey Guys !');
-});
+app.set('view engine', 'ejs');
 
-server.listen(3001, '127.0.0.1')
+app.listen(3001)
+console.log('You are listening to port 3001')
+
+app.get('/todo', function(req, res){
+    res.send("Hello World !")
+})
